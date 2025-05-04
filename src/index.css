@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-primary text-light font-sans;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-light hover:text-secondary transition-colors duration-300;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold mb-8 text-secondary;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-secondary text-primary font-semibold rounded-md hover:bg-opacity-90 transition-all duration-300;
+  }
+}
