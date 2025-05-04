@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import { useState } from 'react'; // Remove React since it's not used
 
 // Update this array with your actual Flutter apps
 const projects = [
@@ -63,29 +63,29 @@ const Projects = () => {
     projects.map(() => 0)
   );
 
-  const handlePrev = (projectIdx: number, screenshotsLength: number) => {
-    setCarouselIndexes((prev) =>
-      prev.map((idx, i) =>
-        i === projectIdx
-          ? idx === 0
-            ? screenshotsLength - 1
-            : idx - 1
-          : idx
-      )
-    );
-  };
+  // const handlePrev = (projectIdx: number, screenshotsLength: number) => {
+  //   setCarouselIndexes((prev) =>
+  //     prev.map((idx, i) =>
+  //       i === projectIdx
+  //         ? idx === 0
+  //           ? screenshotsLength - 1
+  //           : idx - 1
+  //         : idx
+  //     )
+  //   );
+  // };
 
-  const handleNext = (projectIdx: number, screenshotsLength: number) => {
-    setCarouselIndexes((prev) =>
-      prev.map((idx, i) =>
-        i === projectIdx
-          ? idx === screenshotsLength - 1
-            ? 0
-            : idx + 1
-          : idx
-      )
-    );
-  };
+  // const handleNext = (projectIdx: number, screenshotsLength: number) => {
+  //   setCarouselIndexes((prev) =>
+  //     prev.map((idx, i) =>
+  //       i === projectIdx
+  //         ? idx === screenshotsLength - 1
+  //           ? 0
+  //           : idx + 1
+  //         : idx
+  //     )
+  //   );
+  // };
 
   return (
     <section id="projects" className="py-20 bg-tertiary">
@@ -157,7 +157,23 @@ const Projects = () => {
                           // Determine if this is the center, left, or right image
                           let pos = (i - carouselIndexes[index] + project.screenshots.length) % project.screenshots.length;
                           let isCenter = pos === 0;
-                          let isSide = pos === 1 || pos === project.screenshots.length - 1;
+                          // Remove or use these functions if they're needed for navigation
+                          // If you're not using these functions, you can safely delete them
+                          // const handlePrev = (projectIdx: number, screenshotsLength: number) => {
+                          //   setCurrentScreenshots(prev => {
+                          //     const newScreenshots = [...prev];
+                          //     newScreenshots[projectIdx] = (newScreenshots[projectIdx] - 1 + screenshotsLength) % screenshotsLength;
+                          //     return newScreenshots;
+                          //   });
+                          // };
+                          
+                          // const handleNext = (projectIdx: number, screenshotsLength: number) => {
+                          //   setCurrentScreenshots(prev => {
+                          //     const newScreenshots = [...prev];
+                          //     newScreenshots[projectIdx] = (newScreenshots[projectIdx] + 1) % screenshotsLength;
+                          //     return newScreenshots;
+                          //   });
+                          // };
 
                           return (
                             <div
